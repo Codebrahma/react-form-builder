@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import HeaderBar from './header-bar';
+
 
 class CustomElement extends Component {
   constructor(props) {
@@ -51,7 +53,7 @@ class CustomElement extends Component {
                 </span>
             )}
           </label>
-          <hr />
+          {!this.props.hideLineSeparator && <hr />}
           <Element
             data={this.props.data}
             {...this.props.data.props}
@@ -63,6 +65,12 @@ class CustomElement extends Component {
   }
 }
 
-CustomElement.propTypes = {};
+CustomElement.defaultProps = {
+  hideLineSeparator: false,
+};
+
+CustomElement.propTypes = {
+  hideLineSeparator: PropTypes.bool,
+};
 
 export default CustomElement;

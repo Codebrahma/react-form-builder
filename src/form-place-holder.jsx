@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
 const PLACE_HOLDER = 'form-place-holder';
 
 export default class PlaceHolder extends React.Component {
@@ -21,6 +22,6 @@ PlaceHolder.propTypes = {
 };
 
 PlaceHolder.defaultProps = {
-  text: 'Drop a item here....',
+  text: 'Drop an item here or click on it to add to form...',
   show: false,
 };

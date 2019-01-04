@@ -91,7 +91,7 @@ export default function(ComposedComponent) {
 
       return connectDragSource(
         connectDropTarget(
-          <div>
+          <div id={`${this.props.id}_draggable`}>
             <ComposedComponent {...this.props} style={{ ...style, opacity }} />
           </div>,
         ),

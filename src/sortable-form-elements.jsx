@@ -1,8 +1,27 @@
 import SortableElement from './sortable-element';
 import {
-  Header, Paragraph, Label, LineBreak, TextInput, NumberInput, TextArea, Dropdown, Checkboxes, DatePicker, RadioButtons, Image, Rating, Tags, Signature, HyperLink, Download, Camera, Range,
+  Camera,
+  Checkboxes,
+  DatePicker,
+  Download,
+  Dropdown,
+  Header,
+  HyperLink,
+  Image,
+  Label,
+  LineBreak,
+  NumberInput,
+  Paragraph,
+  RadioButtons,
+  Range,
+  Rating,
+  Signature,
+  Tags,
+  TextArea,
+  TextInput,
 } from './form-elements';
 import PlaceHolder from './form-place-holder';
+
 
 const FormElements = {};
 

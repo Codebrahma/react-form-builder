@@ -10,6 +10,7 @@ import update from 'immutability-helper';
 import SortableElement from './sortable-element';
 import CustomElement from './CustomElement';
 
+
 const { PlaceHolder } = SortableFormElements;
 
 export default class Preview extends React.Component {
@@ -31,7 +32,10 @@ export default class Preview extends React.Component {
         : [];
     var saveUrl = this.props.saveUrl ? this.props.saveUrl : '';
 
-    store.dispatch('load', { loadData, saveUrl });
+    store.dispatch('load', {
+      loadData,
+      saveUrl
+    });
     const update = this._onChange.bind(this);
     store.subscribe(state => update(state.data));
 
@@ -40,7 +44,8 @@ export default class Preview extends React.Component {
   }
 
   _setValue(text) {
-    return text.replace(/[^A-Z0-9]+/gi, '_').toLowerCase();
+    return text.replace(/[^A-Z0-9]+/gi, '_')
+      .toLowerCase();
   }
 
   updateElement(element) {
@@ -158,10 +163,12 @@ export default class Preview extends React.Component {
             />
           )}
         </div>
-        <div className="Sortable">{items}</div>
+        <div className="Sortable">
+          {items}
+        </div>
         <PlaceHolder
           id="form-place-holder"
-          show={items.length == 0}
+          show
           index={items.length}
           moveCard={this.cardPlaceHolder}
           insertCard={this.insertCard}
