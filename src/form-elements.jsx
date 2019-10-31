@@ -327,6 +327,24 @@ class TextArea extends React.Component {
     this.inputField = React.createRef();
   }
 
+  renderEmotions = emotions => (
+    <span className="comment-emotions">
+      {_.map(emotions, (score, emotion) => (
+        <span className="emotion-wrapper" key={emotion}>
+          <span className="emotion-name">{emotion.charAt(0).toUpperCase() + emotion.slice(1)}</span>
+          <span className="emotion-bar">
+            <span
+              style={{
+                width: `${score * 100}%`,
+              }}
+            ></span>
+          </span>
+          {Number.parseFloat(score).toFixed(2)}
+        </span>
+      ))}
+    </span>
+  );
+
   render() {
     let props = {};
     props.className = 'form-control';
@@ -348,6 +366,10 @@ class TextArea extends React.Component {
 
     let sentimentalClass = '';
     const isSentimentAdded = !!this.props.data.sentiment && !!this.props.data.sentiment.label;
+    const isEmotionsExist =
+      isSentimentAdded &&
+      !!this.props.data.sentiment.emotions &&
+      !!Object.keys(this.props.data.sentiment.emotions).length;
 
     if (isSentimentAdded) {
       sentimentalClass = `${this.props.data.sentiment.label.toLowerCase()}`;
@@ -389,6 +411,11 @@ class TextArea extends React.Component {
                 &nbsp;
                 {`${this.props.data.sentiment.label} (${this.props.data.sentiment.score}) Net Sentiment Score`}
               </span>
+            )}
+            {isEmotionsExist && (
+              <div style={{ display: 'block' }}>
+                {this.renderEmotions(this.props.data.sentiment.emotions)}
+              </div>
             )}
           </label>
           <textarea {...props} rows="8" />

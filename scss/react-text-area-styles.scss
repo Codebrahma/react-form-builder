@@ -1,6 +1,7 @@
 $positiveSentimentColor: #28a745;
 $negativeSentimentColor: #dc3545;
 $neutralSentimentColor: #ffc107;
+$emotionBarColor: #b6c0c5;
 
 .form-text-area-sentiment {
   margin: 0 10px;
@@ -28,6 +29,40 @@ $neutralSentimentColor: #ffc107;
     color: $neutralSentimentColor;
     .sentimental-dot {
       background-color: $neutralSentimentColor;
+    }
+  }
+}
+
+.comment-emotions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  .emotion-wrapper {
+    display: inherit;
+    align-items: center;
+    font-size: 11px;
+    font-weight: bold;
+    margin-right: 12px;
+    .emotion-name {
+      padding-right: 6px;
+      color: #2786fb;
+    }
+    .emotion-bar {
+      display: inline-block;
+      margin-left: 6px;
+      margin-right: 6px;
+      width: 2rem;
+      height: 0.5rem;
+      border: 1px solid $emotionBarColor;
+      span {
+        display: block;
+        height: 100%;
+        background-color: $emotionBarColor;
+      }
+    }
+    @media only screen and (max-width: 599px) {
+      .emotion-name {
+        width: 50px;
+      }
     }
   }
 }
