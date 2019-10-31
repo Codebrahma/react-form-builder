@@ -327,23 +327,30 @@ class TextArea extends React.Component {
     this.inputField = React.createRef();
   }
 
-  renderEmotions = emotions => (
-    <span className="comment-emotions">
-      {_.map(emotions, (score, emotion) => (
-        <span className="emotion-wrapper" key={emotion}>
-          <span className="emotion-name">{emotion.charAt(0).toUpperCase() + emotion.slice(1)}</span>
-          <span className="emotion-bar">
-            <span
-              style={{
-                width: `${score * 100}%`,
-              }}
-            ></span>
+  renderEmotions = emotions => {
+    const sortedEmotions = Object.keys(emotions)
+      .map(emotion => [emotion, emotions[emotion]])
+      .sort((current, next) => next[1] - current[1]);
+    return (
+      <span className="comment-emotions">
+        {sortedEmotions.map(([emotion, score]) => (
+          <span className="emotion-wrapper" key={emotion}>
+            <span className="emotion-name">
+              {emotion.charAt(0).toUpperCase() + emotion.slice(1)}
+            </span>
+            <span className="emotion-bar">
+              <span
+                style={{
+                  width: `${score * 100}%`,
+                }}
+              ></span>
+            </span>
+            {Number.parseFloat(score).toFixed(2)}
           </span>
-          {Number.parseFloat(score).toFixed(2)}
-        </span>
-      ))}
-    </span>
-  );
+        ))}
+      </span>
+    );
+  };
 
   render() {
     let props = {};
