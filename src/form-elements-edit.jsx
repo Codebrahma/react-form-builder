@@ -597,6 +597,15 @@ export default class FormElementsEdit extends React.Component {
             key={this.props.element.options.length}
           />
         )}
+        <hr></hr>
+        <div className="clearfix">
+          <button
+            className="pull-right btn btn-sm btn-success"
+            onClick={this.props.manualEditModeOff}
+          >
+            Save & Close
+          </button>
+        </div>
       </div>
     );
   }
