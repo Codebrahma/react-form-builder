@@ -1,5 +1,11 @@
+# CAUTION
+
+This package is highly customized for internal usage, **DO NOT** use in new projects
+
 # React Form Builder Advance
+
 A complete react form builder that interfaces with a json endpoint to load and save generated forms.
+
 - Upgraded to React 16.4.1
 - Use react-dnd for Drag & Drop
 - Save form data with dummy api server.
