@@ -21,6 +21,6 @@ PlaceHolder.propTypes = {
 };
 
 PlaceHolder.defaultProps = {
-  text: 'Select/Drop an item from toolbox',
+  text: 'Click to Add or Drop an item from the toolbox',
   show: false,
 };
