@@ -163,7 +163,12 @@ export default class FormElementsEdit extends React.Component {
         </div>
         {this.props.element.hasOwnProperty('content') && (
           <div className="form-group">
-            <label className="control-label">Text to display:</label>
+            <label className="control-label">
+              Text to display:&nbsp;
+              <small>
+                (Use <b>CTRL/CMD + SHIFT + V</b> to paste unformatted plain text version)
+              </small>
+            </label>
 
             <Editor
               toolbar={toolbar}
@@ -268,7 +273,12 @@ export default class FormElementsEdit extends React.Component {
         )}
         {this.props.element.hasOwnProperty('label') && (
           <div className="form-group">
-            <label>Display Label</label>
+            <label>
+              Display Label &nbsp;
+              <small>
+                (Use <b>CTRL/CMD + SHIFT + V</b> to paste unformatted plain text version)
+              </small>
+            </label>
             <Editor
               toolbar={toolbar}
               defaultEditorState={editorState}
