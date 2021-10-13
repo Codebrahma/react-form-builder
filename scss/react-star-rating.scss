@@ -6,23 +6,29 @@
 }
 
 .star-container {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	span.star {
-		width: 100%;
-		text-align: center;
-		cursor: pointer;
-	}
-	span.rating-number {
-		font-size: 24px;
-		display: inline-block;
-		min-width: 50px;
-	}
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  span.star {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+  }
+  span.rating-number {
+    font-size: 24px;
+    display: inline-block;
+    min-width: 50px;
+  }
+}
+
+.star-disabled {
+  span.star {
+    cursor: not-allowed;
+  }
 }
 
 .star {
-	i.fa {
-		font-size: 32px !important;
-	}
+  i.fa {
+    font-size: 32px !important;
+  }
 }
