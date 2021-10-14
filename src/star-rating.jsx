@@ -68,6 +68,12 @@ export default class StarRating extends React.Component {
     const { name, disabled } = this.props;
     const { rating } = this.state;
 
+    const customClassName = [
+      "star-container",
+      disabled ? "star-disabled" : "",
+      this.props.customClass !== undefined ? this.props.customClass : "",
+    ].join(" ");
+
     // Restricted to 5 stars.
     const RATING_AMOUNT = 5;
     let stars = [];
@@ -124,7 +130,7 @@ export default class StarRating extends React.Component {
     }
     return (
       <div className="rating-stars">
-        <div className={`star-container ${disabled ? "star-disabled" : ""}`}>
+        <div className={customClassName}>
           {stars}
           <span className="rating-number">{rating}</span>
         </div>
