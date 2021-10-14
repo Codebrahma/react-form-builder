@@ -1,6 +1,6 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import PropTypes from "prop-types";
+import cx from "classnames";
 
 /**
  * @fileoverview react-star-rating
@@ -20,7 +20,7 @@ export default class StarRating extends React.Component {
     super(props);
     this.state = {
       rating: props.rating || 0,
-      temp_rating: 0
+      temp_rating: 0,
     };
   }
 
@@ -31,9 +31,9 @@ export default class StarRating extends React.Component {
       return;
     }
 
-    this.setState(prev => ({
+    this.setState((prev) => ({
       rating,
-      temp_rating: prev.rating
+      temp_rating: prev.rating,
     }));
   }
 
@@ -44,8 +44,8 @@ export default class StarRating extends React.Component {
       return;
     }
 
-    this.setState(prev => ({
-      rating: prev.temp_rating
+    this.setState((prev) => ({
+      rating: prev.temp_rating,
     }));
   }
 
@@ -58,22 +58,28 @@ export default class StarRating extends React.Component {
 
     this.setState({
       rating,
-      temp_rating: rating
+      temp_rating: rating,
     });
 
     onRatingClick(rating);
   }
 
   render() {
-    const { name } = this.props;
+    const { name, disabled } = this.props;
     const { rating } = this.state;
+
+    const customClassName = [
+      "star-container",
+      disabled ? "star-disabled" : "",
+      this.props.customClass !== undefined ? this.props.customClass : "",
+    ].join(" ");
 
     // Restricted to 5 stars.
     const RATING_AMOUNT = 5;
     let stars = [];
     for (let i = 0; i < RATING_AMOUNT; i++) {
       let starClass = "star-rated-outline";
-      const isValidRating = rating >= i+0.5 && rating !== 0;
+      const isValidRating = rating >= i + 0.5 && rating !== 0;
       if (isValidRating) {
         starClass = "star-rated";
       }
@@ -83,43 +89,50 @@ export default class StarRating extends React.Component {
         width: "15px",
         fontSize: "32px",
         overflow: "hidden",
-      }
+      };
 
       stars.push(
-        <span
-          className="star" key={`star-${i+0.5}`}
-          name={name}
-        >
+        <span className="star" key={`star-${i + 0.5}`} name={name}>
           <span
             style={{
               ...starStyles,
-              direction: "ltr"
+              direction: "ltr",
             }}
             className={starClass}
-            onMouseOver={() => this.handleMouseover(i+0.5)}
-            onClick={() => this.rate(i+0.5)}
+            onMouseOver={() => this.handleMouseover(i + 0.5)}
+            onClick={() => this.rate(i + 0.5)}
             onMouseOut={() => this.handleMouseout()}
-          >{isValidRating ? <i className="fa fa-star" aria-hidden="true"></i> : <i className="fa fa-star-o" aria-hidden="true"></i>}
+          >
+            {isValidRating ? (
+              <i className="fa fa-star" aria-hidden="true"></i>
+            ) : (
+              <i className="fa fa-star-o" aria-hidden="true"></i>
+            )}
           </span>
           <span
             style={{
               ...starStyles,
-              direction: "rtl"
+              direction: "rtl",
             }}
             className={starClass}
-            onMouseOver={() => this.handleMouseover(i+1)}
-            onClick={() => this.rate(i+1)}
+            onMouseOver={() => this.handleMouseover(i + 1)}
+            onClick={() => this.rate(i + 1)}
             onMouseOut={() => this.handleMouseout()}
-          >{rating >= i+1 && rating !== 0 ? <i className="fa fa-star" aria-hidden="true"></i> : <i className="fa fa-star-o" aria-hidden="true"></i>}
+          >
+            {rating >= i + 1 && rating !== 0 ? (
+              <i className="fa fa-star" aria-hidden="true"></i>
+            ) : (
+              <i className="fa fa-star-o" aria-hidden="true"></i>
+            )}
           </span>
         </span>
       );
     }
     return (
       <div className="rating-stars">
-        <div className="star-container">
-        {stars}
-        <span className="rating-number">{rating}</span>
+        <div className={customClassName}>
+          {stars}
+          <span className="rating-number">{rating}</span>
         </div>
       </div>
     );

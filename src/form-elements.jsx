@@ -1076,6 +1076,10 @@ class Rating extends React.Component {
     props.name = this.props.data.field_name;
     props.ratingAmount = 5;
 
+    if (this.props.data.customClassName) {
+      props.customClass = this.props.data.customClassName;
+    }
+
     if (this.props.mutable) {
       props.rating =
         this.props.defaultValue !== undefined && this.props.defaultValue.length
