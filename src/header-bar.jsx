@@ -22,14 +22,12 @@ export default class HeaderBar extends React.Component {
                 <i className="is-isolated fa fa-pencil-square-o" />
               </div>
             )}
-          {this.props.data.element === 'Header' && (
-            <div
-              className="btn is-isolated btn-school"
-              onClick={() => this.props.onDuplicate && this.props.onDuplicate({ ...this.props.data, draggable: true })}
-            >
-              <i className="is-isolated fa fa-clone" />
-            </div>
-          )}
+          <div
+            className="btn is-isolated btn-school"
+            onClick={() => this.props.onDuplicate && this.props.onDuplicate({ ...this.props.data, draggable: true })}
+          >
+            <i className="is-isolated fa fa-clone" />
+          </div>
           {this.props.data.allowDelete !== false && (
             <div
               className="btn is-isolated btn-school"
