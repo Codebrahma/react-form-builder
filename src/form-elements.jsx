@@ -530,6 +530,7 @@ class DatePicker extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
