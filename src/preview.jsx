@@ -37,6 +37,8 @@ export default class Preview extends React.Component {
 
     this.moveCard = this.moveCard.bind(this);
     this.insertCard = this.insertCard.bind(this);
+    this._onDestroy = this._onDestroy.bind(this);
+    this._onDuplicate = this._onDuplicate.bind(this);
   }
 
   _setValue(text) {
@@ -77,6 +79,13 @@ export default class Preview extends React.Component {
 
   _onDestroy(item) {
     store.dispatch('delete', item);
+  }
+
+  _onDuplicate(item) {
+    const { data } = this.state;
+    const newItem = { ...item, id: new Date().getTime() };
+    const currentIndex = data.findIndex(i => i.id === item.id);
+    this.insertCard(newItem, currentIndex + 1);
   }
 
   insertCard(item, hoverIndex) {
@@ -131,6 +140,7 @@ export default class Preview extends React.Component {
         sortData={item.id}
         data={item}
         _onDestroy={this._onDestroy}
+        _onDuplicate={this._onDuplicate}
       />
     );
   }
