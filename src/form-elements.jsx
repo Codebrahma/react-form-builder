@@ -1062,6 +1062,7 @@ class Image extends React.Component {
             onDestroy={this.props._onDestroy}
             onEdit={this.props.onEdit}
             required={this.props.data.required}
+            onDuplicate={this.props._onDuplicate}
           />
         )}
         {this.props.data.src && (
