@@ -59,6 +59,7 @@ class Header extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -147,6 +148,7 @@ class Label extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -183,6 +185,7 @@ class LineBreak extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -232,6 +235,7 @@ class TextInput extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -297,6 +301,7 @@ class NumberInput extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -397,6 +402,7 @@ class TextArea extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -524,6 +530,7 @@ class DatePicker extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -629,6 +636,7 @@ class Dropdown extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -724,6 +732,7 @@ class Signature extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -827,6 +836,7 @@ class Tags extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -883,6 +893,7 @@ class Checkboxes extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -971,6 +982,7 @@ class RadioButtons extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -1050,6 +1062,7 @@ class Image extends React.Component {
             onDestroy={this.props._onDestroy}
             onEdit={this.props.onEdit}
             required={this.props.data.required}
+            onDuplicate={this.props._onDuplicate}
           />
         )}
         {this.props.data.src && (
@@ -1117,6 +1130,7 @@ class Rating extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -1162,6 +1176,7 @@ class HyperLink extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -1197,6 +1212,7 @@ class Download extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -1275,6 +1291,7 @@ class Camera extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
@@ -1402,6 +1419,7 @@ class Range extends React.Component {
               onEdit={this.props.onEdit}
               static={this.props.data.static}
               required={this.props.data.required}
+              onDuplicate={this.props._onDuplicate}
             />
           </div>
         )}
