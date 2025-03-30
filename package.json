@@ -1,6 +1,6 @@
 {
   "name": "cb-react-form-builder",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A complete form builder for react.",
   "main": "lib/index.js",
   "license": "MIT",
