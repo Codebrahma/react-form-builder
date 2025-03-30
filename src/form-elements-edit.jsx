@@ -107,6 +107,18 @@ export default class FormElementsEdit extends React.Component {
     return EditorState.createWithContent(contentState);
   }
 
+  handleUploadFile() {
+    this.props.onFileUpload().then((fileURL) => {
+      const link = document.getElementById('srcInput');
+      link.value = fileURL;
+
+      let this_element = this.state.element;
+      this_element.src = fileURL;
+
+      this.setState({ element: this_element, dirty: true });
+    });
+  }
+
   render() {
     let this_checked = this.props.element.hasOwnProperty('required')
       ? this.props.element.required
@@ -213,6 +225,24 @@ export default class FormElementsEdit extends React.Component {
             />
           </div>
         )}
+
+        {
+          this.props.element.element == 'Image' && (
+            <div>
+              <div className="form-group">
+                <button
+                  className="btn btn-default"
+                  onClick={handleUploadFile}
+                >
+                  Upload a Image
+                </button>
+              </div>
+
+              <p className="text-center">OR</p>
+            </div>
+          )
+        }
+
         {this.props.element.hasOwnProperty('src') && (
           <div>
             <div className="form-group">

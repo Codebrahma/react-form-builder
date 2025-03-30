@@ -81,6 +81,7 @@ class ReactFormBuilder extends React.Component {
               editMode={this.state.editMode}
               variables={this.props.variables}
               editElement={this.state.editElement}
+              onFileUpload={this.props.onFileUpload}
             />
             <Toolbar
               {...this.props.toolbarItems}

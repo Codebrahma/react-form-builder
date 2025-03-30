@@ -165,6 +165,7 @@ export default class Preview extends React.Component {
               preview={this}
               element={this.props.editElement}
               updateElement={this.updateElement}
+              onFileUpload={this.props.onFileUpload}
             />
           )}
         </div>
