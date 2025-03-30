@@ -232,7 +232,7 @@ export default class FormElementsEdit extends React.Component {
               <div className="form-group">
                 <button
                   className="btn btn-default"
-                  onClick={handleUploadFile}
+                  onClick={this.handleUploadFile.bind(this)}
                 >
                   Upload a Image
                 </button>
